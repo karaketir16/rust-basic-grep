@@ -14,10 +14,8 @@ fn main() {
 }
 
 fn finder(s: &String, filenames: Vec<String>) {
-    // File hosts must exist in current path before this produces output
     for filename in filenames.iter(){
         if let Ok(lines) = read_lines(filename) {
-            // Consumes the iterator, returns an (Optional) String
             for (lineNumber, line) in lines.enumerate() {
                 if let Ok(ln) = line {
                     if ln.contains(&s[..]) {
